@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="true" >
+
+	<bean id="goodsDataProvider" class="cn.edu.sau.javashop.widget.goods.list.GoodsDataProvider" parent="baseSupport" scope="prototype" />
+ 	<bean id="goods_list" class="cn.edu.sau.javashop.widget.goods.list.GoodsList" scope="prototype"></bean>
+	<bean id="goods_cat" class="cn.edu.sau.javashop.widget.goodscat.GoodsCat" scope="prototype"></bean>
+	<bean id="fadeplay" class="cn.edu.sau.app.base.widget.adv.fadeplay.FadePlayWidget" scope="prototype"></bean>
+	<bean id="goods_search" class="cn.edu.sau.javashop.widget.goods.search.GoodsSearchWidget" scope="prototype"></bean>
+	<bean id="goods_search2" class="cn.edu.sau.javashop.widget.goods.search2.GoodsSearchWidget2" scope="prototype"></bean>
+	<bean id="goods_compare" class="cn.edu.sau.javashop.widget.goods.compare.CompareGoodsWidget" parent="baseSupport" scope="prototype"></bean>
+	<bean id="shop_article" class="cn.edu.sau.javashop.widget.article.ArticleWidget" scope="prototype"></bean>
+	<bean id="shop_help" class="cn.edu.sau.javashop.widget.article.HelpWidget" scope="prototype"></bean>
+	<bean id="articlecat" class="cn.edu.sau.javashop.widget.article.ArticleCatWidget" scope="prototype"></bean>
+	<bean id="articleList" class="cn.edu.sau.javashop.widget.article.ArticleListWidget" scope="prototype"></bean>
+	<bean id="shop_cart" class="cn.edu.sau.javashop.widget.cart.CartWidget" scope="prototype"></bean>
+	<bean id="checkOutWidget" class="cn.edu.sau.javashop.widget.cart.checkout.CheckOutWidget" scope="prototype"></bean>
+	<bean id="regionsSelect" class="cn.edu.sau.javashop.widget.Regions.RegionsSelectWidget" scope="prototype"></bean>
+	<bean id="paywidget" class="cn.edu.sau.javashop.widget.cart.PayWidget" scope="prototype"></bean>
+	
+	<bean id="partZone" class="cn.edu.sau.javashop.widget.partzone.PartZoneWidget" scope="prototype"></bean>
+	<bean id="searchBar" class="cn.edu.sau.javashop.widget.search.SearchBarWidget" scope="prototype"></bean>
+	<bean id="search" class="cn.edu.sau.javashop.widget.search.SearchWidget" scope="prototype"></bean>
+	<bean id="comment" class="cn.edu.sau.javashop.widget.comments2.CommentsWdiget" scope="prototype"></bean>
+	<bean id="commentNum" class="cn.edu.sau.javashop.widget.comments2.CommentNumWidget" scope="prototype"></bean>
+	<bean id="shop_guestbook" class="cn.edu.sau.javashop.widget.comments.GoodsComments" scope="prototype">
+		<property name="commentType"><value>shop</value></property>
+		<property name="object_type"><value>leavewords</value> </property>
+	</bean>	
+	<bean id="goods_ask" class="cn.edu.sau.javashop.widget.comments.GoodsComments" scope="prototype">
+		<property name="commentType"><value>goods</value></property>
+		<property name="object_type"><value>ask</value> </property>
+	</bean>
+	<bean id="goods_discuss" class="cn.edu.sau.javashop.widget.comments.GoodsComments" scope="prototype">
+		<property name="commentType"><value>goods</value></property>
+		<property name="object_type"><value>discuss</value> </property>	
+	</bean>	
+	<bean id="goods_grade" class="cn.edu.sau.javashop.widget.comments.GoodsGradeWidget" scope="prototype"></bean>
+	<bean id="article_comments" class="cn.edu.sau.javashop.widget.comments.GoodsComments" scope="prototype">
+		<property name="commentType"><value>article</value></property>
+		<property name="object_type"><value>discuss</value> </property>	
+	</bean>	
+	<bean id="goods_detail" class="cn.edu.sau.javashop.widget.goods.detail.GoodsDetailWidget" scope="prototype">
+	</bean>
+	<bean id="goods_detail_main" class="cn.edu.sau.javashop.widget.goods.detail.GoodsDetailMainWidget" scope="prototype">
+	</bean>
+	<bean id="goods_gallery" class="cn.edu.sau.javashop.widget.gallery.GoodsGalleryWidget" scope="prototype"></bean>
+	<bean id="goods_gallery2" class="cn.edu.sau.javashop.widget.gallery2.GoodsGalleryWidget2" scope="prototype"></bean>
+	<bean id="goods_adjunct" class="cn.edu.sau.javashop.widget.adjunct.GoodsAdjunctWidget" scope="prototype"></bean>
+	<bean id="goods_props" class="cn.edu.sau.javashop.widget.goods.detail.GoodsPropsWidget" scope="prototype"></bean>
+	<bean id="goods_params" class="cn.edu.sau.javashop.widget.goods.detail.GoodsParamsWidget" scope="prototype"></bean>
+	<bean id="goods_intro" class="cn.edu.sau.javashop.widget.goods.detail.GoodsIntroWidget" scope="prototype"></bean>
+	<bean id="goods_spec" class="cn.edu.sau.javashop.widget.spec.ShopexSpecWidget" scope="prototype"></bean>
+	<bean id="goods_pmt" class="cn.edu.sau.javashop.widget.goods.detail.GoodsPromotionWidget" scope="prototype"></bean>
+	<bean id="goods_complex" class="cn.edu.sau.javashop.widget.complex.GoodsComplexWidget" scope="prototype"></bean>
+	<bean id="package" class="cn.edu.sau.javashop.widget.bind.BindWidget" scope="prototype"></bean>
+	<bean id="brand_list" class="cn.edu.sau.javashop.widget.brand.BrandWidget" scope="prototype"></bean>
+	<bean id="brandGroup" class="cn.edu.sau.javashop.widget.brand.group.BrandGroupWidget" scope="prototype"></bean>
+	<bean id="brand_detail" class="cn.edu.sau.javashop.widget.brand.BrandDetailWidget" scope="prototype"></bean>
+	<bean id="gift_list" class="cn.edu.sau.javashop.widget.gift.GiftWidget" scope="prototype"></bean>
+	
+	<!-- 团购 -->
+	<bean id="groupBuyList" class="cn.edu.sau.javashop.widget.groupbuy.GroupBuyListWidget" scope="prototype"></bean>
+	<bean id="groupBuyDetail" class="cn.edu.sau.javashop.widget.groupbuy.GroupBuyDetailWidget" scope="prototype"></bean>
+	<!-- 限时抢购-->
+	<bean id="limitBuyList" class="cn.edu.sau.javashop.widget.limitbuy.LimitBuyListWidget" scope="prototype"></bean>
+	<bean id="delivery_price" class="cn.edu.sau.javashop.widget.delivery.DeliveryPriceWidget" scope="prototype"></bean>
+	<bean id="goods_sns_share" class="cn.edu.sau.javashop.widget.goods.sns.GoodsSnsShareWidget" scope="prototype"></bean>
+	<bean id="goods_article" class="cn.edu.sau.javashop.widget.goods.detail.RelatedArticlesWidget" scope="prototype"></bean>
+	
+	<bean id="jiusheng_cat" class="cn.edu.sau.javashop.widget.jiushengcat.JiusshengCatWidget" scope="prototype"></bean>
+	<bean id="search_nav" class="cn.edu.sau.javashop.widget.nav.SearchNavWidget" scope="prototype"></bean>
+	<bean id="detail_nav" class="cn.edu.sau.javashop.widget.nav.DetailNavWidget" scope="prototype"></bean>
+	
+	<!-- 以下为会员中心挂件 -->
+	<bean id="member_isbuy" class="cn.edu.sau.javashop.widget.member.MemberGoodsIsBuyWidget" scope="prototype"></bean>
+	<bean id="member_islogin" class="cn.edu.sau.javashop.widget.member.MemberIsLoginWidget" scope="prototype"></bean>
+	<bean id="member_cart_bar" class="cn.edu.sau.javashop.widget.member.MemberCartBarWidget" scope="prototype"></bean>
+	<bean id="member_login_bar" class="cn.edu.sau.javashop.widget.member.MemberLoginBarWidget" scope="prototype"></bean>
+	<bean id="member_register" class="cn.edu.sau.javashop.widget.member.MemberRegisterWidget" scope="prototype"></bean>
+	<bean id="member_findpassword" class="cn.edu.sau.javashop.widget.member.FindPasswordWidget" scope="prototype"></bean>
+	<bean id="member_login" class="cn.edu.sau.javashop.widget.member.MemberLoginWidget" scope="prototype"></bean>
+	<bean id="member_logout" class="cn.edu.sau.javashop.widget.member.MemberLogoutWidget" scope="prototype"></bean>
+	<bean id="member_main" class="cn.edu.sau.javashop.widget.member.MemberMainWidget" scope="prototype"></bean>
+	<bean id="member_index" class="cn.edu.sau.javashop.widget.member.MemberIndex" scope="prototype"></bean>
+	<bean id="member_order" class="cn.edu.sau.javashop.widget.member.MemberOrderWidget" scope="prototype"></bean>
+	<bean id="member_orderdetail" class="cn.edu.sau.javashop.widget.member.MemberOrderDetailWidget" scope="prototype"></bean>
+	<bean id="member_orderpay" class="cn.edu.sau.javashop.widget.member.MemberOrderPay" scope="prototype"></bean>
+	<bean id="member_comments" class="cn.edu.sau.javashop.widget.member.MemberCommentsWidget" scope="prototype"></bean>
+	<bean id="member_info" class="cn.edu.sau.javashop.widget.member.MemberInfoWidget" scope="prototype"></bean>
+	<bean id="member_address" class="cn.edu.sau.javashop.widget.member.MemberAddressWidget" scope="prototype"></bean>
+	<bean id="member_message" class="cn.edu.sau.javashop.widget.member.MemberMessageWidget" scope="prototype"></bean>
+	<bean id="member_security" class="cn.edu.sau.javashop.widget.member.MemberSecurityWidget" scope="prototype"></bean>
+	<bean id="member_sites" class="cn.edu.sau.javashop.widget.member.MemberSitesWidget" scope="prototype"></bean>
+	<bean id="member_gnotify" class="cn.edu.sau.javashop.widget.member.MemberGnotifyWidget" scope="prototype"></bean>
+	<bean id="member_pointhistory" class="cn.edu.sau.javashop.widget.member.MemberPointHistoryWidget" scope="prototype"></bean>
+	<bean id="member_coupons" class="cn.edu.sau.javashop.widget.member.MemberCouponsMemberWidget" scope="prototype"></bean>
+	<bean id="member_favorite" class="cn.edu.sau.javashop.widget.member.MemberFavoriteWidget" scope="prototype"></bean>
+	<bean id="member_couponExchange" class="cn.edu.sau.javashop.widget.member.MemberCouponExchangeWidget" scope="prototype"></bean>
+	<bean id="member_advanceLogs" class="cn.edu.sau.javashop.widget.member.MemberAdvanceLogsWidget" scope="prototype"></bean>
+	<bean id="member_deposit" class="cn.edu.sau.javashop.widget.member.MemberDepositWidget" scope="prototype"></bean>
+	<bean id="member_returns_order" class="cn.edu.sau.javashop.widget.member.MemberReturnsOrderWidget" scope="prototype"></bean>
+	<bean id="member_invoice" class="cn.edu.sau.javashop.widget.member.MemberInvoiceApplyWidget" scope="prototype"></bean>
+	<bean id="member_email_check" class="cn.edu.sau.javashop.widget.member.MemberEmailCheckWidget" scope="prototype"></bean>
+	<bean id="member_popularize" class="cn.edu.sau.javashop.widget.member.MemberPopularizeWidget" scope="prototype"></bean>
+	
+</beans>

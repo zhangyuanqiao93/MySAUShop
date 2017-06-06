@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="false">
+	
+	<bean id="widgetParamParser" class="cn.edu.sau.eop.processor.facade.support.widget.XmlWidgetParamParser"></bean><!--
+	<bean id="widgetParamParser" claXmlWidgetParamParserCacheProxyroxy">
+		<constructor-arg>
+ 			<ref bean="widgetParamParserImpl"/>
+ 		</constructor-arg> 	
+	</bean>
+	
+	--><bean id="widgetParamUpdater" class="cn.edu.sau.eop.processor.facade.support.widget.XmlWidgetParamUpdater"></bean>
+	<bean id="facadePagePaser" class="cn.edu.sau.eop.processor.facade.support.FacadePagePaser"></bean>
+	<bean id="facadePageUpdater" class="cn.edu.sau.eop.processor.facade.support.FacadePageUpdater"></bean>
+	<bean id="pageParamJsonGetter" class="cn.edu.sau.eop.processor.facade.support.PageParamJsonGetter"></bean>
+	<bean id="localWidgetCfgPaser" class="cn.edu.sau.eop.processor.facade.support.widget.LocalWidgetCfgHtmlPaser"></bean>
+	<bean id="parsePageService" class="cn.edu.sau.eop.processor.facade.support.ParsePageService"></bean>
+	
+
+ 	<!-- 
+ 				==============================
+ 						资源管理
+ 				==============================
+ 	 -->
+ 	<!-- 用户管理 -->
+	<bean id="userManager" class="cn.edu.sau.eop.resource.impl.UserManagerImpl"></bean>
+	
+ 	<!-- 用户详细管理 -->
+	<bean id="userDetailManager" class="cn.edu.sau.eop.resource.impl.UserDetailManagerImpl"></bean>
+	
+ 	<!-- 用户管理 -->
+ 	<bean id="adminUserManager" class="cn.edu.sau.app.base.core.service.auth.impl.AdminUserManagerImpl"></bean>
+	
+ 	<!-- 站点管理 -->
+	<bean id="siteManagerImpl" class="cn.edu.sau.eop.resource.impl.SiteManagerImpl"></bean>
+	
+ 	<!-- 域名管理 -->
+	<bean id="domainManager" class="cn.edu.sau.eop.resource.impl.DomainManagerImpl"></bean>
+	
+ 	<!-- 应用管理 -->
+	<bean id="appManagerImpl" class="cn.edu.sau.eop.resource.impl.AppManagerImpl"></bean>
+	
+ 	<!-- 数据日志管理 -->
+	<bean id="dataLogManager" class="cn.edu.sau.eop.resource.impl.DataLogManager"></bean>
+	
+	<!-- theme uri管理 -->
+	<bean id="themeUriManagerImpl" class="cn.edu.sau.eop.resource.impl.ThemeUriManagerImpl" parent="baseSupport" ></bean>
+	
+ 	<!-- 菜单管理 -->
+	<bean id="menuManager" class="cn.edu.sau.eop.resource.impl.MenuManagerImpl" parent="baseSupport" ></bean>
+	
+ 	<!-- 挂件桩管理 -->
+	<bean id="widgetBundleManager" class="cn.edu.sau.eop.resource.impl.WidgetBundleManagerImpl" parent="baseSupport" ></bean>
+	
+ 	<!-- 前台主题管理 -->
+	<bean id="themeManager" class="cn.edu.sau.eop.resource.impl.ThemeManagerImpl" parent="baseSupport" ></bean>
+	
+ 	<!-- 后台主题管理 -->
+	<bean id="adminThemeManager" class="cn.edu.sau.eop.resource.impl.AdminThemeManagerImpl" parent="baseSupport" ></bean>
+	
+ 	<!-- 后台首页项 -->
+	<bean id="indexItemManager" class="cn.edu.sau.eop.resource.impl.IndexItemManager" parent="baseSupport" ></bean>
+	
+ 	<!-- 边框管理 -->
+	<bean id="borderManager" class="cn.edu.sau.eop.resource.impl.BorderManagerImpl" parent="baseSupport" ></bean>
+	
+
+
+	
+ 	<!-- 
+ 				==============================
+ 						缓存代理
+ 				==============================
+ 	 -->
+	<bean id="themeUriManager" class="cn.edu.sau.eop.resource.impl.cache.ThemeUriCacheProxy" >
+		<constructor-arg>
+			<ref bean="themeUriManagerImpl"/>
+		</constructor-arg>
+	</bean>
+ 	<bean id="appManager" class="cn.edu.sau.eop.resource.impl.cache.AppCacheProxy" >
+ 		<constructor-arg>
+ 			<ref bean="appManagerImpl"/>
+ 		</constructor-arg>
+ 	</bean>
+ 	<bean id="siteManager" class="cn.edu.sau.eop.resource.impl.cache.SiteCacheProxy" >
+		<constructor-arg>
+ 			<ref bean="siteManagerImpl"/>
+ 		</constructor-arg> 		
+ 	</bean>
+ 			
+</beans>
